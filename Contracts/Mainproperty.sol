@@ -10,8 +10,6 @@ contract RealEstate is ERC20{
 
 
 
-
-
 struct PropertyFinances {
     uint Tokenprice;
     uint TokensNumbers;
@@ -39,11 +37,19 @@ address public owner;
 mapping (address => PropertyFinances ) public PropertykiFinances ;
 mapping (address => PropertyDetails ) public PropertykiDetails ;
 
+mapping(address => uint256) public stakeHolders; //to be used in stakeholder deciding function
+mapping(address => bool) public castedVote;
+
+string[] options;
+uint256[] winnerList;
 
 
-constructor() ERC20("RealEstateToken", "RET") {}
+constructor() ERC20("RealEstateToken", "RET") {
+    owner = msg.sender;
+}
 
- function DecideTokenprice(address _property)public {
+
+function DecideTokenprice(address _property)public {
   PropertyFinances storage property = PropertykiFinances[_property];
   property.Tokenprice=property.Bedroom.add(property.Bathroom)
   .add(property.LotSizeinsqft).add(property.Interiorsize);
@@ -90,5 +96,47 @@ function DecideNetRentmonth(address _property) public {
     PropertyFinances storage property = PropertykiFinances[_property];
     _mint(_property ,property.NetRentmonth );
   }
+
+
+    // function setStakeHolders() public {
+    //     require(msg.sender == owner);
+    //     stakeHolders[0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2] = 4;
+    //     castedVote[0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2] = false;
+    //     stakeHolders[0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db] = 4;
+    //     castedVote[0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db] = false;
+    // }
+
+
+
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
+    function viewOptions() public view returns (string[] memory) {
+        return options;
+    }
+
+    function setOptions(string[] memory opt) public onlyOwner {
+        options = opt;
+        winnerList = new uint256[](options.length);
+        // setStakeHolders();// Reset castedVote() array for a new vote agenda
+    }
+
+    function viewResult() public view onlyOwner returns (uint256[] memory) {
+        return winnerList;
+    }
+
+    //function will be working after stakeholders are decided
+    function castVote(uint256 choice) public {
+        require(stakeHolders[msg.sender] >= 1);
+        address holder = msg.sender;
+        require(castedVote[holder] == false);
+        winnerList[choice - 1] += 1;
+        castedVote[holder] = true;
+    }
+
+
+
 
 }
