@@ -71,7 +71,7 @@ export default function Login() {
         <img src={logoImage} alt='logo' className='w-20 h-20 mb-5 rounded-lg' />
       </div>
 
-      <div className='py-6 bg-gradient-to-tr from-slate-800 to-slate-950 px-8 rounded-lg w-1/2 lg:w-1/3 max-md:w-5/6 animate-fade-in-up z-50 shadow-3xl'>
+      <div className='py-6 bg-gradient-to-tr from-slate-800 to-slate-950 px-8 rounded-lg w-1/2 lg:w-1/3 max-md:w-5/6 animate-fade-in-up z-50 shadow-3xl hover:shadow-lg'>
         <h1 className='text-2xl font-bold text-gray-300'>Login here</h1>
         <p className='text-red-500 py-2 px-3 animate-slide-in transition-all duration-300 ease-in' >
           {(!trueUser && 'Enter valid credentials')}
