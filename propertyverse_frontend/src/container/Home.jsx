@@ -46,7 +46,6 @@ export default function Home() {
     }
   }
 
-  console.log(user, role);
   useEffect(() => {
     scrollRef.current.scrollTo(0, 0);
   }, []);
