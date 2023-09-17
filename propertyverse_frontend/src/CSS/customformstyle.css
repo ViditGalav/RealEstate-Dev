@@ -1,0 +1,81 @@
+/* custom-form-styles.css */
+/* Form Container */
+.ant-form {
+  /* Add your custom styles for the form container here */
+  /* color: white !important; */
+  
+}
+
+/* Form Items */
+.ant-form-item {
+  margin: 0 !important;
+  /* Default margin between form items */
+  padding: 0 !important;
+
+  
+}
+
+.ant-form-item-label {
+  padding: 0 !important;
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+.ant-form-item-control {
+  margin: 0 !important;
+  padding: 0;
+
+}
+
+/* Form Item Controls */
+.ant-input {
+}
+
+.ant-select {
+  /* Add your custom styles for select controls here */
+
+}
+
+.ant-radio-group {
+  /* Add your custom styles for radio group controls here */
+
+}
+
+.custom-label label {
+  color: white !important; /* Change to the desired color */
+  
+}
+
+.ant-checkbox-group {
+  /* Add your custom styles for checkbox group controls here */
+  /* margin-top: 10px;
+        margin-bottom: 10px; */
+  /* margin: 0 !important; */
+
+}
+
+.ant-datepicker {
+
+  /* Add your custom styles for date picker controls here */
+}
+
+/* Form Validation */
+.ant-form-item-has-error {
+  /* Add your custom styles for form items with validation errors here */
+}
+
+.ant-form-explain {
+
+  /* Add your custom styles for validation error messages here */
+}
+
+/* Buttons */
+.ant-btn {
+  /* Add your custom styles for buttons here */
+
+}
+
+.ant-form-item-control .ant-btn {
+  /* Add your custom styles for buttons within form item controls here */
+
+}

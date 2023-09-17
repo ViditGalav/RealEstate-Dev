@@ -1,0 +1,58 @@
+/* Add scrollbar styles for Webkit browsers (Chrome, Safari, etc.) */
+
+::-webkit-scrollbar {
+        width: 0px;
+        /* width of vertical scrollbar */
+        height: 0px;
+        /* height of horizontal scrollbar */
+}
+
+/* Track styles */
+::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* background color of the track */
+}
+
+/* Thumb styles */
+::-webkit-scrollbar-thumb {
+        background: #888;
+        /* color of the thumb */
+}
+
+/* Add scrollbar styles for Firefox */
+/* Note: Firefox does not support individual scrollbar track and thumb styles */
+/* You can only customize the color of the scrollbar */
+/* The scrollbar width is not customizable in Firefox */
+
+/* Add scrollbar styles for Microsoft Edge */
+/* Similar to Webkit, but using a different syntax */
+/* You might need to prefix some properties with '-ms-' */
+
+/* Add scrollbar styles for Internet Explorer (non-Chromium version) */
+/* Older versions of IE support a different syntax, like '-ms-scrollbar-base-color' */
+
+/* Add scrollbar styles for other browsers */
+/* It's recommended to use a library like SimpleBar or overlay-scrollbars for consistent customization across browsers */
+
+/* Example: styling both horizontal and vertical scrollbars */
+::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+}
+
+::-webkit-scrollbar-track {
+        background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+        background: #888;
+}
+
+/* Horizontal scrollbar */
+::-webkit-scrollbar-horizontal {
+        height: 10px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+        background: #888;
+}
