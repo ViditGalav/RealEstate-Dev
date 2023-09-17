@@ -18,7 +18,7 @@ const isNotActiveStyle = 'flex py-1 pl-4 gap-3 text-gray-300 hover:text-gray-100
 const isActiveStyle = 'flex py-2 gap-3 font-extrabold border-r-2 border-white transition-all duration-200 ease-in-out capitalize my-2 pl-6 text-gray-100';
 
 
-export default function Dashboard({ user, role }) {
+export default function Dashboard({ user, role, closeToggle }) {
   const navigate = useNavigate();
   const [confirmLogout, setConfirmLogout] = useState(false);
   function handleLogout() {
@@ -47,45 +47,45 @@ export default function Dashboard({ user, role }) {
         {role === 'owner' &&
           <>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/owner-nfts`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}><BsBuildingFillCheck fontSize={25} />Your NFT's</NavLink>
+              <NavLink to={`/owner/${user?._id}/owner-nfts`} onClick={()=>closeToggle(false)} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}><BsBuildingFillCheck fontSize={25} />Your NFT's</NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/wallet`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/wallet`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}>
                 <GiWallet fontSize={25} />Your Wallet
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/property-details`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/property-details`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
                 <BsFillBuildingsFill fontSize={25} /> Property Details
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/add-property`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/add-property`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
                 <BsBuildingFillAdd fontSize={25} /> Add Properties
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/update-property`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/update-property`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
                 <BsBuildingFillGear fontSize={25} /> Modify Properties
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/remove-property`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/remove-property`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
                 <BsBuildingFillDash fontSize={25} /> Remove Properties
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/tenant-details`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/tenant-details`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
                 <RiParentFill fontSize={25} /> Tenant Details
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/recent-activities`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/recent-activities`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}>
                 <MdRecentActors fontSize={25} />Recent activities
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/owner/${user?._id}/insights`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/insights`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}>
                 <SiPagespeedinsights fontSize={25} />Useful Insights
               </NavLink>
             </div>
@@ -94,25 +94,25 @@ export default function Dashboard({ user, role }) {
         {role === "tenant" &&
           <>
             <div className='p-2 pr-0'>
-              <NavLink to={`/tenant/${user?._id}/tenant-properties`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}><BsBuildingFillCheck fontSize={25} />Your Properties</NavLink>
+              <NavLink onClick={()=>closeToggle(false)} to={`/tenant/${user?._id}/tenant-properties`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}><BsBuildingFillCheck fontSize={25} />Your Properties</NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/tenant/${user?._id}/wallet`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}>
+              <NavLink onClick={()=>closeToggle(false)} to={`/tenant/${user?._id}/wallet`} className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}>
                 <GiWallet fontSize={25} />Your Wallet
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/tenant/${user?._id}/more-properties`} className={({isActive})=> isActive ? isActiveStyle : isNotActiveStyle} >
+              <NavLink onClick={()=>closeToggle(false)} to={`/tenant/${user?._id}/more-properties`} className={({isActive})=> isActive ? isActiveStyle : isNotActiveStyle} >
                 <BsBuildingFillAdd fontSize={25} /> More Properties
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/tenant/${user?._id}/property-owners`} className={({isActive})=> isActive ? isActiveStyle : isNotActiveStyle} >
+              <NavLink onClick={()=>closeToggle(false)} to={`/tenant/${user?._id}/property-owners`} className={({isActive})=> isActive ? isActiveStyle : isNotActiveStyle} >
                 <AiFillContacts fontSize={25} /> Property Owners
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink to={`/tenant/${user?._id}/transaction-details`} className={({isActive})=> isActive ? isActiveStyle : isNotActiveStyle} >
+              <NavLink onClick={()=>closeToggle(false)} to={`/tenant/${user?._id}/transaction-details`} className={({isActive})=> isActive ? isActiveStyle : isNotActiveStyle} >
                 <FaFileInvoiceDollar fontSize={25} /> Transaction details
               </NavLink>
             </div>

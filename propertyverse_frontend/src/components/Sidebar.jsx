@@ -7,7 +7,7 @@ import { BsWechat } from 'react-icons/bs';
 import { BsFillPinFill } from 'react-icons/bs';
 import { MdFeedback } from 'react-icons/md';
 
-export default function Sidebar({ user, role }) {
+export default function Sidebar({ user, role, closeToggle }) {
   const navigate = useNavigate();
   const [confirmLogout, setConfirmLogout] = useState(false);
 
@@ -27,11 +27,11 @@ export default function Sidebar({ user, role }) {
 
       <div className='border-gray-500 flex flex-col'>
         <div className='py-2 '>
-          <NavLink to={'/'} className={({ isActive }) => isActive ? isActiveStyle : isNoteActiveStyle}><HiHome fontSize={25} />Home</NavLink>
+          <NavLink to={'/'} className={({ isActive }) => isActive ? isActiveStyle : isNoteActiveStyle}onClick={()=>closeToggle(false)}><HiHome fontSize={25} />Home</NavLink>
         </div>
-        <NavLink to={'/community'} className={({ isActive }) => isActive ? isActiveStyle : isNoteActiveStyle}><CgCommunity fontSize={25} />Community</NavLink>
-        <NavLink to={'/blog'} className={({ isActive }) => isActive ? isActiveStyle : isNoteActiveStyle}><FaBlogger fontSize={25} />Blog</NavLink>
-        <NavLink to={'/feedback'} className={({ isActive }) => isActive ? isActiveStyle : isNoteActiveStyle}><MdFeedback fontSize={25} />Feedback</NavLink>
+        <NavLink to={'/community'} className={({ isActive }) => isActive ? isActiveStyle : isNoteActiveStyle}onClick={()=>closeToggle(false)}><CgCommunity fontSize={25} />Community</NavLink>
+        <NavLink to={'/blog'} className={({ isActive }) => isActive ? isActiveStyle : isNoteActiveStyle}onClick={()=>closeToggle(false)}><FaBlogger fontSize={25} />Blog</NavLink>
+        <NavLink to={'/feedback'} className={({ isActive }) => isActive ? isActiveStyle : isNoteActiveStyle}onClick={()=>closeToggle(false)}><MdFeedback fontSize={25} />Feedback</NavLink>
 
       </div>
 
