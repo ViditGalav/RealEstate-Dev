@@ -11,8 +11,6 @@ import {BsBuildingFillAdd} from 'react-icons/bs';
 import {AiFillContacts} from 'react-icons/ai';
 import {RiParentFill} from 'react-icons/ri';
 import {FaFileInvoiceDollar} from 'react-icons/fa';
-import {BsBuildingFillDash} from 'react-icons/bs';
-import {BsBuildingFillGear} from 'react-icons/bs';
 
 const isNotActiveStyle = 'flex py-1 pl-4 gap-3 text-gray-300 hover:text-gray-100 transition-all duration-200 ease-in-out capitalize my-1';
 const isActiveStyle = 'flex py-2 gap-3 font-extrabold border-r-2 border-white transition-all duration-200 ease-in-out capitalize my-2 pl-6 text-gray-100';
@@ -65,16 +63,6 @@ export default function Dashboard({ user, role, closeToggle }) {
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/update-property`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
-                <BsBuildingFillGear fontSize={25} /> Modify Properties
-              </NavLink>
-            </div>
-            <div className='p-2 pr-0'>
-              <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/remove-property`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
-                <BsBuildingFillDash fontSize={25} /> Remove Properties
-              </NavLink>
-            </div>
-            <div className='p-2 pr-0'>
               <NavLink onClick={()=>closeToggle(false)} to={`/owner/${user?._id}/tenant-details`} className={({isActive})=>isActive ? isActiveStyle : isNotActiveStyle}>
                 <RiParentFill fontSize={25} /> Tenant Details
               </NavLink>
@@ -102,8 +90,8 @@ export default function Dashboard({ user, role, closeToggle }) {
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
-              <NavLink onClick={()=>closeToggle(false)} to={`/tenant/${user?._id}/more-properties`} className={({isActive})=> isActive ? isActiveStyle : isNotActiveStyle} >
-                <BsBuildingFillAdd fontSize={25} /> More Properties
+              <NavLink onClick={()=>closeToggle(false)} to={`/tenant/${user?._id}/rent-buy-properties`} className={({isActive})=> isActive ? isActiveStyle : isNotActiveStyle} >
+                <BsBuildingFillAdd fontSize={25} /> Rent / Sell Properties
               </NavLink>
             </div>
             <div className='p-2 pr-0'>
