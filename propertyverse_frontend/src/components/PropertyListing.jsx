@@ -5,7 +5,7 @@ export default function PropertyListing({ properties, owner }) {
 
    if (properties?.length === 0) {
       return (
-         <diV>Sorry, No properties to show!!</diV>
+         <div>Sorry, No properties to show!!</div>
       )
    } else {
       return (

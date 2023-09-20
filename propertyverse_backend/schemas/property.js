@@ -102,6 +102,12 @@ export default {
          name: 'postedBy',
          title: 'PostedBy',
          type: 'postedBy',
-      }
+      },
+      {
+         name: 'tenants',
+         title: 'Tenants',
+         type: 'array',
+         of: [{type: 'tenant'}]
+      },
    ]
 }
