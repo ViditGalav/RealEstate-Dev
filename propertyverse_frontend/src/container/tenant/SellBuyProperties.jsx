@@ -53,7 +53,7 @@ export default function SellBuyProperties() {
     )
   } else {
     return (
-      <div className='text-gray-200 w-full flex items-center justify-center flex flex-col'>
+      <div className='text-gray-200 w-full flex items-center justify-center flex-col'>
         <div className='p-2 rounded-xl blue-glassmorphism text-white'>Filters</div>
         <PropertyListing properties={properties && properties} owner={false} />
       </div>

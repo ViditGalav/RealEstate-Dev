@@ -69,7 +69,9 @@ export default function Home() {
 
         <div className='flex-1 overflow-y-scroll' ref={scrollRef}>
           <Routes>
+          <Route path="/create-vote" element={<CreateVote />} />
             <Route path='/*' element={<DisplayRoutes user={user && user} role={(role === "owner") || (role === "tenant") ? role : ""} />} />
+            <Route path='/:userId/profile' element={<ProfilePage />} />
           </Routes>
         </div>
       </div>
@@ -112,11 +114,10 @@ export default function Home() {
         }
 
         <div className='pb-2 flex-1 h-screen overflow-y-scroll' ref={scrollRef}>
-
           <Routes>
+            <Route path="/create-vote" element={<CreateVote />} />
             <Route path='/*' element={<DisplayRoutes user={user && user} role={(role === "owner") || (role === "tenant") ? role : ""} />} />
             <Route path='/:userId/profile' element={<ProfilePage />} />
-            <Route path="/create-vote" element={<CreateVote />} />
           </Routes>
         </div>
       </div>
