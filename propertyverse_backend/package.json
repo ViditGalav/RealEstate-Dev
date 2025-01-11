@@ -5,9 +5,9 @@
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "sanity dev",
-    "start": "sanity start",
-    "build": "sanity build",
+    "dev": "node api.js && sanity dev",
+    "start": "node api.js && sanity start",
+    "build": "node api.js && sanity build",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy"
   },
